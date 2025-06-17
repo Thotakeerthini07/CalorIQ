@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | calorIQ</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="login-wrapper">
+    <div class="login-box">
+      <h2>Login to calorIQ</h2>
+      <form method="POST">
+        <label>Email Address</label>
+        <input type="email" name="email" placeholder="you@example.com" required />
+        <button type="submit">Login</button>
+      </form>
+      <p style="text-align: center; margin-top: 15px;">
+        New here? <a href="/register">Register</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>

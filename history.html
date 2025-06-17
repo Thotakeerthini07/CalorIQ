@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Meal History | calorIQ</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h2>📅 Your Meal History</h2>
+    
+    {% if history %}
+      {% for day in history %}
+        <div class="card">
+          <h3>{{ day.date }} – Total: {{ day.total }} kcal</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Food</th>
+                <th>Calories</th>
+                <th>Confidence</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for meal in day.meals %}
+              <tr>
+                <td>{{ meal.food }}</td>
+                <td>{{ meal.calories }}</td>
+                <td>{{ meal.confidence | round(2) }}</td>
+                <td>{{ meal.time }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      {% endfor %}
+    {% else %}
+      <div class="note">No meal history found.</div>
+    {% endif %}
+
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="/dashboard">← Back to Dashboard</a>
+    </div>
+  </div>
+</body>
+</html>

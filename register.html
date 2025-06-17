@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Register | calorIQ</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container" style="max-width: 400px;">
+    <h2>Create Your calorIQ Account</h2>
+    <form method="POST">
+      <label>Email Address</label>
+      <input type="email" name="email" placeholder="you@example.com" required />
+      <button type="submit">Register</button>
+    </form>
+    <p style="text-align: center; margin-top: 15px;">
+      Already registered? <a href="/login">Login here</a>
+    </p>
+  </div>
+</body>
+</html>

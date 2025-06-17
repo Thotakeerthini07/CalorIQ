@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>calorIQ Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <div class="logout" style="text-align: right; margin-bottom: -20px;">
+      <a href="/profile">👤 Profile</a> |
+      <a href="/history">📅 History</a> |
+      <a href="/logout">🚪 Logout</a>
+    </div>
+
+    <h2>Welcome, {{ user_email }}</h2>
+
+    <div class="goal">
+      <strong>🎯 Calorie Goal:</strong> {{ user_limit }} kcal<br>
+      <strong>🔥 Calories Consumed Today:</strong> {{ total_so_far }} kcal
+    </div>
+
+    <form action="/upload_meal" method="POST" enctype="multipart/form-data">
+      <label for="food_image">Upload Meal Image</label>
+      <input type="file" name="food_image" accept="image/*" required />
+      <button type="submit">Analyze</button>
+    </form>
+
+    {% if note %}
+      <div class="note">📝 {{ note }}</div>
+    {% endif %}
+
+    <h3>Today's Meal Log</h3>
+    {% if log_data %}
+      {% for entry in log_data %}
+        <div class="card">
+          <img src="{{ url_for('static', filename='img/default_food.jpg') }}" class="food-preview" alt="Food Image">
+          <h4>{{ entry.food | title }}</h4>
+          <p>Calories: <strong>{{ entry.calories }}</strong> kcal</p>
+          <p>Confidence: {{ entry.confidence | round(2) }}</p>
+          <p>Time: {{ entry.time }}</p>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>No meals logged yet today.</p>
+    {% endif %}
+  </div>
+</body>
+</html>
