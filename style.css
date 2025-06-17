@@ -1,0 +1,186 @@
+/* === Base Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: url('../img/bg-light.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+/* === Container === */
+.container {
+  max-width: 960px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(4px);
+}
+
+/* === Headings === */
+h1, h2, h3, h4 {
+  color: #0077b6;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+/* === Forms === */
+form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border 0.3s;
+}
+
+form input:focus,
+form select:focus {
+  border-color: #0077b6;
+  outline: none;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: #0077b6;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #005b8e;
+}
+
+/* === Note / Alert === */
+.note {
+  margin-top: 20px;
+  padding: 14px;
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  border-radius: 8px;
+  color: #856404;
+  font-size: 15px;
+  text-align: center;
+}
+
+/* === Meal Cards === */
+.card {
+  background-color: #fdfdfd;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  padding: 16px;
+  margin: 20px 0;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.food-preview {
+  max-width: 100px;
+  height: auto;
+  display: block;
+  margin: 10px auto 15px;
+  border-radius: 10px;
+}
+
+/* === Table === */
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+table th {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+/* === Links & Navigation === */
+a {
+  color: #0077b6;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.logout {
+  text-align: right;
+  margin-bottom: -20px;
+}
+
+.logout a {
+  color: #ff4d4d;
+  font-weight: bold;
+}
+
+/* === Responsive Layout === */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+    margin: 20px 10px;
+  }
+
+  form input,
+  form select,
+  button {
+    font-size: 14px;
+  }
+
+  h1, h2 {
+    font-size: 22px;
+  }
+}
+/* Centering the login box */
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('../img/bg-light.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.login-box {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+}
