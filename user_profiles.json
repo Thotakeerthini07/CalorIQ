@@ -1,0 +1,16 @@
+{
+  "thotakeerthini2004@gmail.com": {
+    "age": 19,
+    "gender": "female",
+    "weight": 55.0,
+    "height": 156.0,
+    "goal": "lose"
+  },
+  "abc@gmail.com": {
+    "age": 19,
+    "gender": "male",
+    "weight": 55.0,
+    "height": 156.0,
+    "goal": "lose"
+  }
+}
